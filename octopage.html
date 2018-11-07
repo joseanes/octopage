@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>jQuery Hello World</title>
+
+    <script type="text/javascript" src="lib/jquery-3.3.1.js"></script>
+
+</head>
+
+<body>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            var jsonConfiguration = $.getJSON("config/octopage.json");
+      //      var dataConfiguration = eval("(" + jsonConfiguration.responseText + ")");
+            console.log(jsonConfiguration);
+      //      document.write(dataConfiguration);
+            $.ajax({
+                url: "http://mk3-3/api/printer",
+                headers: {
+          //          'Host'      : 'mk3-3.local',
+                    'X-Api-Key' : 'F028704834D94D9F9EFBF85C56F6F7BB'
+                }
+            }).then(function (data) {
+                $('.greeting-id').append(data.temperature.bed.actual);
+                $('.greeting-content').append(data.temperature.bed.actual);
+            });
+        });
+
+    </script>
+
+    <div>
+        <p class="debugArea">Debug Area</p>
+        <p class="greeting-id">The ID is </p>
+        <p class="greeting-content">The content is </p>
+    </div>
+</body>
+</html>

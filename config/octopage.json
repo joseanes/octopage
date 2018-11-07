@@ -1,0 +1,14 @@
+{
+  "printers": [
+    {
+      "name": "Prusa Mk 3 - 3",
+      "host": "mk3-3",
+      "apiKey": ""
+    },
+    {
+      "name": "CR10S-3",
+      "host": "cr10-3",
+      "apiKey": ""
+    }
+  ]
+}
